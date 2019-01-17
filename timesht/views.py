@@ -13,12 +13,13 @@ def get_name(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            # ...
+
             name = request.POST.get('your_name')
             #formObj = EName.objects.create(Name=name)
             form_object = EName.objects.get(Name=name)
             print(dir(form_object))
             # redirect to a new URL:
+            #Adding a comment to test git
             return HttpResponseRedirect('thanks/')
 
     # if a GET (or any other method) we'll create a blank form
